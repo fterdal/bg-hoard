@@ -5,6 +5,7 @@
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     ".eslintrc.json": "*",
+    ".github/workflows/ci.yml": "*",
     "nx.json": "*"
   },
   "affected": { "defaultBase": "master" },
