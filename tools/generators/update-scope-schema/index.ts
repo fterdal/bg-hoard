@@ -31,7 +31,7 @@ export default async function (host: Tree) {
     }))
     return schemaJson;
   });
-  const content = host.read('tools/generators/util-lib/index.ts', 'utf-8');
+  const content = host.read('tools/generators/util-lib/index.ts').toString();
   const newContent = replaceScopes(content, scopes);
   host.write('tools/generators/util-lib/index.ts', newContent);
   await formatFiles(host);
