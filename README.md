@@ -1,94 +1,108 @@
+# Nx Workshop - Building a Board Game Store
 
+In this workshop we'll be building a store for a fictional board game company called "The Board Game Hoard".
 
-# BgHoard
+We're going to be using [Nx](https://nx.dev/) and some its plugins to accelerate the development of this app.
 
-This project was generated using [Nx](https://nx.dev).
+Some of the things you'll learn:
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+- Generating a pristine Nx workspace
+- Generating frontend Angular apps and backend APIs inside your workspace, with pre-configured proxies
+- Creating shared libs for re-using code
+- Generating new routed components with all the lazily loaded routes pre-configured by Nx and ready to go
+- How to organize code in a monorepo
+- Easily move libs around your folder structure
+- Creating Storybook stories and e2e Cypress tests for your components
+- How to set boundaries between the different scopes in your project
+- Write automated source code generators for common tasks in your workspace
+- Set-up CI for your Pull Requests
+- Add distributed caching
+- Set up the NxCloud GitHub integration
+- Write advanced deployment targets using the `run-commands` executor
+- Set up Continuous Deployment systems that deploy only the affected projects
 
-🔎 **Smart, Extensible Build Framework**
+To help you understand how to apply some of these lessons in your own projects, we'll try to build a more "real-world" example. However, because of the time constrains and to make sure we get to cover as much material as possible, we'll provide you with all the code for any "non-Nx" work you need to do (like styling and configuring Angular routes) - so you can focus on learning to use Nx to its full potential.
 
-## Adding capabilities to your workspace
+This is what we'll build:
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+  <img src="docs/assets/game-demo.gif" height="700" alt="lab4 file structure">
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+### Pre-requisites
 
-Below are our core plugins:
+Nx has support for a lot of platforms, but in this workshop we'll be using mainly Angular. While all the code for any Angular specific work will be provided, it will help if you have some experience with the Angular ecosystem.
 
-- [React](https://reactjs.org)
-  - `npm install --save-dev @nrwl/react`
-- Web (no framework frontends)
-  - `npm install --save-dev @nrwl/web`
-- [Angular](https://angular.io)
-  - `npm install --save-dev @nrwl/angular`
-- [Nest](https://nestjs.com)
-  - `npm install --save-dev @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `npm install --save-dev @nrwl/express`
-- [Node](https://nodejs.org)
-  - `npm install --save-dev @nrwl/node`
+Make sure you have the following installed:
 
-There are also many [community plugins](https://nx.dev/community) you could add.
+- Node.js version 10 and up
+    - `node --version`
+- [Yarn](https://classic.yarnpkg.com/en/docs/install/)
+    - `yarn --version`
+- A Github account
+    - http://github.com
+  
+Optional:
+- A Heroku account
+    - https://heroku.com/
+    - with the [CLI installed](https://devcenter.heroku.com/articles/heroku-cli): `heroku --version`
+- [Docker](https://www.docker.com/get-started)
+    - `docker --version`
 
-## Generate an application
+### How the labs work
 
-Run `nx g @nrwl/react:app my-app` to generate an application.
+Each lab will have the following sections:
 
-> You can use any of the plugins above to generate applications as well.
+- 📚 **"Learning outcomes"**
+  - A summary of the most important things you'll learn in that lab
+- 📲 **"After this workshop, your app should look similar to this"**
+  - This will contain a screenshot of any changes to the app visuals after the lab
+  - Any changes to the source directory structure
+- 🏋️‍♀️ **"Steps"**
+  - All the lab steps you need to follow
 
-When using Nx, you can create multiple applications and libraries in the same workspace.
+##### Hints and solutions feat. Ron the whale 🐳
 
-## Generate a library
+While the _mighty narwhal_ is away on secret missions, you will occasionally see his assistant, **Ron The Whale 🐳** offering helpful hints to the different exercises. Please use these if you get stuck.
 
-Run `nx g @nrwl/react:lib my-lib` to generate a library.
+If you get stuck running any Nx command, there is a `SOLUTION.md` file in each lab's folder.
 
-> You can also use any of the plugins above to generate libraries as well.
+As mentioned, for anything Angular/styling or HTML template work we will provide the code you need as direct links to the files. Please use these as much as possible.
 
-Libraries are shareable across libraries and applications. They can be imported from `@bg-hoard/mylib`.
+Finally, if you fall behind or join late, Git branches are provided for each lab, which will fast forward you to that lab - `git checkout lab-x` (where `x` is the number of the lab you want to start).
 
-## Development server
+If you want to skip ahead to the end: `git checkout final-solution`
 
-Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+### The labs
 
-## Code scaffolding
+Each lab will contain a link to the next one. Start from **"Lab 1"** and move through them as required:
 
-Run `nx g @nrwl/react:component my-component --project=my-app` to generate a new component.
+#### Day 1
 
-## Build
+- 🔬 [Lab 1 - Generate an empty workspace](docs/lab1/LAB.md)
+- ⚗️ [Lab 2 - Generate an Angular app](docs/lab2/LAB.md)
+- 🧪 [Lab 3 - Executors](docs/lab3/LAB.md)
+- 🔭 [Lab 4 - Generate a component lib](docs/lab4/LAB.md)
+- 🧬 [Lab 5 - Generate a utility lib](docs/lab5/LAB.md)
+- 🧮 [Lab 6 - Generate a route lib](docs/lab6/LAB.md)
+- 🤖 [Lab 7 - Add a NestJS API](docs/lab7/LAB.md)
+- 📐 [Lab 8 - Displaying a full game in the routed game-detail component](docs/lab8/LAB.md)
+- 💻 [Lab 9 - Generate a type lib that the API and frontend can share](docs/lab9/LAB.md)
+- 👩‍💻 [Lab 10 - Generate Storybook stories for the shared ui component](docs/lab10%20-%20bonus/LAB.md)
+- ⌨️ [Lab 11 - E2E test the shared component](docs/lab11%20-%20bonus/LAB.md)
 
-Run `nx build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+#### Day 2
 
-## Running unit tests
+- 💡 [Lab 12 - Module boundaries](docs/lab12/LAB.md)
+- 🧸️ [Lab 13 - Workspace Generators - Intro](docs/lab13/LAB.md)
+- 🧵 [Lab 14 - Workspace Generators - Modifying files](docs/lab14/LAB.md)
+- 💎 [Lab 15 - Setting up CI](docs/lab15/LAB.md)
+- 🔌 [Lab 16 - Distributed caching](docs/lab16/LAB.md)
+- 🔍 [Lab 17 - NxCloud GitHub bot](docs/lab17/LAB.md)
+- 📎 [Lab 18 - Run-Commands and deploying the frontend](docs/lab18/LAB.md)
 
-Run `nx test my-app` to execute the unit tests via [Jest](https://jestjs.io).
+| Option 1 - React frontends and more custom generators practice | Option 2 - Heroku API deployments with Docker |
+| ----------- | ----------- |
+| 🧭 [Lab 19 - Creating and deploying a 2nd frontend](docs/lab19-alt/LAB.md) | 🧲 [Lab 19 - Deploying the API](docs/lab19/LAB.md) |
+| ⛱️ [Lab 20 - Mock Store](docs/lab20-alt/LAB.md)     | 🎸 [Lab 20 - Connecting the frontend and backend](docs/lab20/LAB.md) |  
+| 🪁 [Lab 21 - Setting up CD for automatic deployment](docs/lab21-alt/LAB.md)     | 🎈 [Lab 21 - Setting up CD for automatic deployment](docs/lab21/LAB.md) |  
 
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx dep-graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev) to learn more.
-
-
-
-## ☁ Nx Cloud
-
-### Distributed Computation Caching & Distributed Task Execution
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.
+- 💈 [Lab 22 - Deploying only what changed](docs/lab22/LAB.md)
