@@ -6,7 +6,7 @@ interface Schema {
   directory: 'store' | 'api' | 'shared';
 }
 
-export default async function (host: Tree, schema: any) {
+export default async function (host: Tree, schema: Schema) {
   await libraryGenerator(host, {
     name: 'util-' + schema.name,
     directory: schema.directory,
